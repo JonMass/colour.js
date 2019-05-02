@@ -3,6 +3,7 @@
     "outputFileName": "js/ColourJS.min.js",
     "inputFiles": [
       "js/ColourJS.js"
-    ]
+    ],
+    "sourceMap": true
   }
 ]
