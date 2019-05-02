@@ -1,0 +1,14 @@
+bin/
+obj/
+App_Data/
+/.vs/
+/packages/
+*.obj
+*.rsp
+*.sdf
+*.opensdf
+*.suo
+*.user
+*.udf
+*.mdf
+*.ldf
