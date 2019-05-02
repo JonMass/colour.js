@@ -1,4 +1,4 @@
-﻿/* ColourJS - https://github.com/JonMass/ColourJS - (c) 2019 DevMass */
+﻿/*! ColourJS - https://github.com/JonMass/ColourJS - (c) 2019 DevMass */
 
 /**
  * A class to represent a colour
