@@ -30,7 +30,7 @@ const b = colour.b;	// ''
 
 colour.r = 12;
 colour.g = 34;
-colour.b = 45;
+colour.b = 56;
 
 //Reading HSL values
 
@@ -42,7 +42,7 @@ const l = colour.l;	// ''
 
 colour.h = 12;
 colour.s = 34;
-colour.l = 45;
+colour.l = 56;
 
 //Writing Hex
 
