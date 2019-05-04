@@ -394,7 +394,9 @@ class Colour
 		{
             this._r = parseInt(result[1], 16);
             this._g = parseInt(result[2], 16);
-			this._b = parseInt(result[3], 16);
+            this._b = parseInt(result[3], 16);
+
+			this.updateHsl();
         }
     }
 
