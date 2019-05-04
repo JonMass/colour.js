@@ -200,6 +200,9 @@ class Colour
 	/**
 	 * Updates the colour's HSL values, from the current RGB values
 	 *
+	 * Based on this {@link https://gist.github.com/mjackson/5311256 | Gist} on GitHub
+	 * Credit: {@link https://gist.github.com/mjackson | Michael Jackson}
+	 *
 	 * @private
 	 * @returns void
 	 */
@@ -255,6 +258,9 @@ class Colour
 
 	/**
 	 * Updates the colour's RGB values, from the current HSL values
+	 *
+	 * Based on this {@link https://gist.github.com/mjackson/5311256 | Gist} on GitHub
+	 * Credit: {@link https://gist.github.com/mjackson | Michael Jackson}
 	 *
 	 * @private
 	 * @returns void
@@ -371,6 +377,9 @@ class Colour
 
 	/**
 	 * Parses a hexadecimal colour string into the Colour instance
+	 * 
+	 * Based on this {@link https://stackoverflow.com/a/5624139 | StackOverflow} answer
+	 * Credit: {@link https://stackoverflow.com/users/96100/tim-down | Tim Down}
 	 *
 	 * @public
 	 * @param {string} hex A string containing a hexadecimal colour
