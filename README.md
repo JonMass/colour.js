@@ -62,9 +62,9 @@ const stringHsl = colour.toStringHsl();	//stringHsl = "hsl(12, 34%, 56%)"
 `Colour` does not contain any properties for alpha, but the following `toStringX()` functions can be used with supplied alpha values
 
 ```
-const stringRgba = colour.toStringRgba(0.5);	//stringRgba = "rgba(12, 34, 56, 0.3)"
+const stringRgba = colour.toStringRgba(0.5);	//stringRgba = "rgba(12, 34, 56, 0.5)"
 const stringRgba = colour.toStringRgba();	//stringRgba = "rgba(12, 34, 56, 1)"
-const stringHsla = colour.toStringHsla(0.5);	//stringHsla = "hsla(12, 34%, 56%, 0.3)"
+const stringHsla = colour.toStringHsla(0.5);	//stringHsla = "hsla(12, 34%, 56%, 0.5)"
 const stringHsla = colour.toStringHsla();	//stringHsla = "hsla(12, 34%, 56%, 1)"
 ```
 
