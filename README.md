@@ -2,6 +2,8 @@
 
 A simple JavaScript ES6 class to represent and manipulate a colour via Hex, RGB and HSL
 
+To view an active example, see [DevMass: HTML Colours](https://www.devmass.com/tool/html-colours)
+
 ## Usage
 
 ### Creating a Colour Instance
