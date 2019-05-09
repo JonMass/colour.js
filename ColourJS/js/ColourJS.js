@@ -21,8 +21,9 @@ class Colour
 	 *
 	 * @public
 	 * @constructor
+	 * @param {Colour} [colour=null] Another Colour instance to copy values from
 	 */
-    constructor()
+    constructor(colour = null)
     {
 		//Initialise RGB Fields
 
@@ -30,19 +31,19 @@ class Colour
 		 * @private
 		 * @property {number} _r The r-value of the colour, in the range 0-255, inclusive
 		 */
-        this._r = 0;
+        this._r = (((colour != null) && (typeof colour === "object") && ("_r" in colour) && (typeof colour._r === "number")) ? colour._r : 0);
 
 		/**
 		 * @private
 		 * @property {number} _g The g-value of the colour, in the range 0-255, inclusive
 		 */
-        this._g = 0;
+        this._g = (((colour != null) && (typeof colour === "object") && ("_g" in colour) && (typeof colour._g === "number")) ? colour._g : 0);
 
 		/**
 		 * @private
 		 * @property {number} _b The b-value of the colour, in the range 0-255, inclusive
 		 */
-        this._b = 0;
+        this._b = (((colour != null) && (typeof colour === "object") && ("_b" in colour) && (typeof colour._b === "number")) ? colour._b : 0);
 
         //Initialise HSL Fields
 
@@ -50,19 +51,19 @@ class Colour
 		 * @private
 		 * @property {number} _h The h-value of the colour, in the range 0-359, inclusive
 		 */
-        this._h = 0;
+        this._h = (((colour != null) && (typeof colour === "object") && ("_h" in colour) && (typeof colour._h === "number")) ? colour._h : 0);
 
 		/**
 		 * @private
 		 * @property {number} _s The s-value of the colour, in the range 0-100, inclusive
 		 */
-        this._s = 0;
+        this._s = (((colour != null) && (typeof colour === "object") && ("_s" in colour) && (typeof colour._s === "number")) ? colour._s : 0);
 
 		/**
 		 * @private
 		 * @property {number} _l The l-value of the colour, in the range 0-100, inclusive
 		 */
-		this._l = 0;
+        this._l = (((colour != null) && (typeof colour === "object") && ("_l" in colour) && (typeof colour._l === "number")) ? colour._l : 0);
     }
 
 	//Accessor Functions
@@ -73,6 +74,7 @@ class Colour
 	 *
 	 * @public
 	 * @type {number}
+	 * @returns {number}
 	 */
     get r() { return this._r; }
 
@@ -82,9 +84,13 @@ class Colour
 	 * @public
 	 * @param {number} value The r-value of the colour, in the range 0-255, inclusive
 	 * @type {number}
+	 * @returns void
 	 */
     set r(value)
 	{
+		if(typeof value !== "number")
+            return;
+
         this._r = Math.floor(Math.min(Math.max(value, 0), 255));
 		this.updateHsl();
     }
@@ -94,6 +100,7 @@ class Colour
 	 *
 	 * @public
 	 * @type {number}
+	 * @returns {number}
 	 */
     get g() { return this._g; }
 
@@ -103,9 +110,13 @@ class Colour
 	 * @public
 	 * @param {number} value The g-value of the colour, in the range 0-255, inclusive
 	 * @type {number}
+	 * @returns void
 	 */
     set g(value)
 	{
+		if(typeof value !== "number")
+			return;
+
         this._g = Math.floor(Math.min(Math.max(value, 0), 255));
 		this.updateHsl();
 	}
@@ -115,6 +126,7 @@ class Colour
 	 *
 	 * @public
 	 * @type {number}
+	 * @returns {number}
 	 */
 	get b() { return this._g; }
 
@@ -124,9 +136,13 @@ class Colour
 	 * @public
 	 * @param {number} value The b-value of the colour, in the range 0-255, inclusive
 	 * @type {number}
+	 * @returns void
 	 */
     set b(value)
 	{
+		if(typeof value !== "number")
+			return;
+
         this._b = Math.floor(Math.min(Math.max(value, 0), 255));
 		this.updateHsl();
 	}
@@ -136,6 +152,7 @@ class Colour
 	 *
 	 * @public
 	 * @type {number}
+	 * @returns {number}
 	 */
 	get h() { return this._h; }
 
@@ -145,9 +162,13 @@ class Colour
 	 * @public
 	 * @param {number} value The h-value of the colour, in the range 0-359, inclusive
 	 * @type {number}
+	 * @returns void
 	 */
     set h(value)
 	{
+		if(typeof value !== "number")
+			return;
+
         this._h = Math.floor(Math.min(Math.max(value, 0), 359));
         this.updateRgb();
 	}
@@ -157,6 +178,7 @@ class Colour
 	 *
 	 * @public 
 	 * @type {number}
+	 * @returns {number}
 	 */
 	get s() { return this._s; }
 
@@ -166,9 +188,13 @@ class Colour
 	 * @public
 	 * @param {number} value The s-value of the colour, in the range 0-100, inclusive
 	 * @type {number}
+	 * @returns void
 	 */
     set s(value)
 	{
+		if(typeof value !== "number")
+			return;
+
         this._s = Math.floor(Math.min(Math.max(value, 0), 100));
 		this.updateRgb();
 	}
@@ -178,6 +204,7 @@ class Colour
 	 *
 	 * @public
 	 * @type {number}
+	 * @returns {number}
 	 */
 	get l() { return this._l; }
 
@@ -187,11 +214,58 @@ class Colour
 	 * @public
 	 * @param {number} value The l-value of the colour, in the range 0-100, inclusive
 	 * @type {number}
+	 * @returns void
 	 */
     set l(value)
 	{
+		if(typeof value !== "number")
+			return;
+
         this._l = Math.floor(Math.min(Math.max(value, 0), 100));
 		this.updateRgb();
+    }
+
+	//Related Colour Functions
+	//-------------------------------------------------------------------------
+	
+	/**
+	 * Returns a new Colour instance that is lighter than this instance, by the specified percentage
+	 *
+	 * @param {number} [amount=0.05] The percentage amount that the returned Colour should be lighter than this instance, in the range 0-1, inclusive
+	 * @param {boolean} [relative=false] Indicates if the adjustment should be made relative to the Colour's current lightness or not
+	 * @returns {Colour} A new Colour instance that is lighter than this instance, by the specified percentage
+	 */
+    lighter(amount = 0.05, relative = false)
+	{
+		const newColour = new Colour(this);
+
+		if((typeof amount === "number") && (typeof relative === "boolean"))
+		{
+			amount = Math.min(Math.max(amount, 0), 1);
+			newColour.l += (relative ? (newColour.l * amount) : amount);
+		}
+
+		return newColour;
+	}
+	
+	/**
+	 * Returns a new Colour instance that is darker than this instance, by the specified percentage
+	 *
+	 * @param {number} [amount=0.05] The percentage amount that the returned Colour should be darker than this instance, in the range 0-1, inclusive
+	 * @param {boolean} [relative=false] Indicates if the adjustment should be made relative to the Colour's current darkness or not
+	 * @returns {Colour} A new Colour instance that is darker than this instance, by the specified percentage
+	 */
+	darker(amount = 0.05, relative = false)
+	{
+		const newColour = new Colour(this);
+
+		if((typeof amount === "number") && (typeof relative === "boolean"))
+		{
+			amount = Math.min(Math.max(amount, 0), 1);
+			newColour.l -= (relative ? (newColour.l * amount) : amount);
+		}
+
+		return newColour;
 	}
 
 	//Update Functions
@@ -387,7 +461,6 @@ class Colour
 	 */
     parseHex(hex)
     {
-		//Paranoia
 		if(typeof hex !== "string")
             return;
 
